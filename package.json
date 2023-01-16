@@ -1,0 +1,54 @@
+{
+  "name": "root",
+  "private": true,
+  "engines": {
+    "node": ">=14",
+    "yarn": "*"
+  },
+  "scripts": {
+    "build-manual": "lerna run build",
+    "build": "yarn build-manual && preconstruct build",
+    "postinstall": "preconstruct dev",
+    "dev": "yarn build-manual && preconstruct dev",
+    "fix": "manypkg fix && preconstruct fix",
+    "start": "start-storybook -p 9001 -c .storybook",
+    "typescript": "tsc --noEmit --project tsconfig.json --skipLibCheck"
+  },
+  "dependencies": {
+    "@babel/core": "7.14.5",
+    "@babel/preset-env": "7.14.5",
+    "@babel/preset-react": "7.14.5",
+    "@babel/preset-typescript": "7.14.5",
+    "@manypkg/cli": "0.18.0",
+    "@percy/cli": "1.17.0",
+    "@percy/storybook": "4.3.4",
+    "@preconstruct/cli": "2.3.0",
+    "@storybook/addon-a11y": "6.5.15",
+    "@storybook/addon-essentials": "6.5.15",
+    "@storybook/addon-links": "6.5.15",
+    "@storybook/addons": "6.5.15",
+    "@storybook/react": "6.5.15",
+    "@storybook/theming": "6.5.15",
+    "@types/react": "17.0.14",
+    "@types/react-dom": "17.0.9",
+    "lerna": "4.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-error-boundary": "3.1.3",
+    "styled-components": "5.3.0",
+    "typescript": "4.6.3"
+  },
+  "resolutions": {
+    "@types/react": "17.0.14"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
