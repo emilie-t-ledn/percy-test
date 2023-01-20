@@ -39,3 +39,8 @@ export const Regular = Template.bind({});
 Regular.args = {
   menuIsOpen: getIsPercyContext() || undefined,
 };
+
+export const AnotherStory = Template.bind({});
+AnotherStory.args = {
+  menuIsOpen: getIsPercyContext() || undefined,
+};
